@@ -1,6 +1,6 @@
 # Splunk Cluster in a box
 
-Builds a splunk instance from scratch.
+Builds a splunk instance from scratch, was something I built a while back when doing a thing. See also [yaleman/splunk_cluster_apps](https://github.com/yaleman/splunk_cluster_apps) for the app deployment side and [yaleman/splunk_cluster_indexers](https://github.com/yaleman/splunk_cluster_apps) for the indexer clustering config.
 
  - uses cloudflare for user-facing things
  - smartstore storage backend
