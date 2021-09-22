@@ -1,0 +1,4 @@
+[general]
+notification_python_3_impact = false
+
+# sourced from https://blog.arcusdata.io/how-to-disable-the-python-3-warning-in-splunk-7.3.x

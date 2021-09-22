@@ -1,0 +1,11 @@
+# this was used for installing test data and doing things, isn't currently used.
+
+DATATMP=$(mktemp -d)
+echo "Installing config explorer"
+mkdir -p /opt/splunk/etc/apps/
+# TODO CHECKTHIS - testdata bucket name needs checking
+aws s3 cp s3://splunk-index-testdata/config-explorer_135.tgz "$DATATMP" --quiet
+tar xzf "${DATATMP}/config-explorer_135.tgz" -C /opt/splunk/etc/apps/
+chown -R splunk. /opt/splunk/etc/apps/
+rm -rf "${DATATMP}"
+echo "Done installing config explorer"

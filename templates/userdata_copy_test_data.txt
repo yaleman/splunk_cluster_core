@@ -1,0 +1,13 @@
+# this is/was used for testing, need to make sure you know what you're doing
+echo "Installing test data"
+DATATMP=$(mktemp -d)
+echo "Copying archive from s3"
+# TODO CHECKTHIS - testdata bucket name needs updating
+aws s3 cp s3://splunk-index-testdata/data-backup.tar.gz "$DATATMP" --quiet
+cd "$DATATMP"
+echo "Extracting test data"
+mkdir -p "$NVME_MOUNTPOINT"
+tar xzf data-backup.tar.gz -C "$NVME_MOUNTPOINT"
+echo "Fixing permissions on test data"
+chown -R splunk. "$NVME_MOUNTPOINT"
+echo "Done installing test data"
